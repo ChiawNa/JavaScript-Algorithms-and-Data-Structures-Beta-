@@ -3,27 +3,22 @@ const convertBtn = document.getElementById('convert-btn');
 const output = document.getElementById('output');
 
 const checkUserInput = () => {
+    output.classList.remove("error", "show");
 
-    output.classList.remove("error");
-
-    if (number.value === ""){
-        output.innerHTML = "Please enter a valid number.";
-        output.classList.add("error");
-        output.classList.remove("hidden"); 
-    }
-    else if (number.value < 1){
-        output.innerHTML = "Please enter a number greater than or equal to 1.";
-        output.classList.add("error");
-        output.classList.remove("hidden"); 
-    }
-    else if (number.value > 3999){
-        output.innerHTML = "Please enter a number less than or equal to 3999.";
-        output.classList.add("error");
-        output.classList.remove("hidden"); 
-    }
-    else {
+    if (number.value === "") {
+        showError("Please enter a valid number.");
+    } else if (number.value < 1) {
+        showError("Please enter a number greater than or equal to 1.");
+    } else if (number.value > 3999) {
+        showError("Please enter a number less than or equal to 3999.");
+    } else {
         convertToRoman(number.value);
     }
+}
+
+const showError = (message) => {
+    output.innerHTML = message;
+    output.classList.add("error", "show");
 }
 
 const convertToRoman = (num) => {
@@ -52,6 +47,7 @@ const convertToRoman = (num) => {
     }
 
     output.innerHTML = result;
+    output.classList.add("show");
 }
 
 convertBtn.addEventListener('click', () => {
