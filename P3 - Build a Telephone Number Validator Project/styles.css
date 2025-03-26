@@ -13,11 +13,12 @@
     --dark-grey: #3b3b4f;
     --dodger-blue: #1E90FF;
     --turquoise: #40E0D0;
+    --sea-green: #2E8B57;
 }
 
 body {
-    min-height: 100vh;
-    padding: 30px 20px;
+    min-height: 100%;
+    padding: 50px 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--dark-grey);
     color: var(--white);
@@ -26,7 +27,7 @@ body {
 
 .header{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     position: relative;
     display: flex;
     align-items: center;
@@ -40,7 +41,7 @@ body {
 
 h1{
     font-size: 3rem;
-    margin:50px;
+    margin: 40px;
     background: linear-gradient(90deg, var(--dodger-blue), var(--turquoise));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,7 +51,6 @@ h1{
     background-color: var(--black);
     width: 400px;
     height: 700px;
-    margin: 10px auto;
     border-radius: 15px;;
     display: flex;
     align-items: center;
@@ -90,6 +90,8 @@ label{
     height: 60px;
     border-radius: 10px;
     margin-top: 20px;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 .phone-footer{
@@ -107,4 +109,90 @@ button{
     overflow-y: auto;
     height: 265px;
     width: 100%;
+    font-size: 1.5rem;
+    color: var(--sea-green);
+    margin-top: 20px;
+    padding: 0 20px;
+    
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 768px) {
+    .logo {
+      width: 300px;
+    }
+  
+    h1 {
+      font-size: 2.2rem;
+      margin: 30px 0;
+    }
+  
+    .phone-container {
+      width: 350px;
+      height: 650px;
+    }
+  
+    .result-container {
+      height: 75%;
+    }
+  
+    label {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 10px;
+    }
+  
+    .logo {
+      width: 250px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+      margin: 20px 0;
+    }
+  
+    .phone-container {
+      width: 300px;
+      height: 550px;
+    }
+  
+    .result-container {
+      height: 70%;
+      padding-top: 15px;
+    }
+  
+    label {
+      font-size: 1.2rem;
+    }
+  
+    .user-input {
+      height: 50px;
+      margin-top: 15px;
+    }
+  
+    button {
+      width: 80px;
+      height: 35px;
+      font-size: 1.2rem;
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .phone-container {
+      width: 280px;
+      height: 500px;
+    }
+  
+    .result-container {
+      height: 65%;
+    }
+  
+    label {
+      font-size: 1rem;
+    }
   }
