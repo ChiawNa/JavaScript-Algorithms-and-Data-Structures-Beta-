@@ -4,9 +4,10 @@ const clearButton = document.getElementById("clear-btn");
 const resultsDiv = document.getElementById("results-div");
 
 const validatePhoneNumber = (number) => {
-    const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/;
-    return regex.test(number);
+    const USregex = /^(1\s?)?(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/;
+    return USregex.test(number);
 };
+
 
 const checkUserInput = () => {
     
